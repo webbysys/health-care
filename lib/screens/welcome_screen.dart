@@ -98,13 +98,124 @@ class _WelcomescreenCheckState extends State<WelcomescreenCheck> {
             ),
           ),
           const Positioned(
+            left: 88,
+            top: 275,
+            child: Image(
+              image: AssetImage("assets/home_screen/Ellipse 17.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          const Positioned(
+            left:95,
+            top: 285,
+            child: Image(
+              image: AssetImage("assets/home_screen/Ellipse 16.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          const Positioned(
+            left: 95,
+            top: 240,
+            child: Image(
+              image: AssetImage("assets/welcome_screen/welcome_doctor.png"),
+              height: 267,
+              width:224 ,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const Positioned(
+            left: 100,
+            top: 275,
+            child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              radius: 25,
+              child: ClipOval(
+                child: Image(
+                  image: AssetImage("assets/welcome_screen/welcome_drop_of_blood.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+          const Positioned(
+            left: 260,
+            top: 275,
+            child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              radius: 25,
+              child: ClipOval(
+                child: Image(
+                  image: AssetImage("assets/welcome_screen/welcome_microscope.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+          const Positioned(
+            left: 75,
+            top: 340,
+            child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              radius: 25,
+              child: ClipOval(
+                child: Image(
+                  image: AssetImage("assets/welcome_screen/welcome_pill.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+          const Positioned(
+            left: 295,
+            top: 340,
+            child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              radius: 25,
+              child: ClipOval(
+                child: Image(
+                  image: AssetImage("assets/welcome_screen/welcome_ask_doctor.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+          const Positioned(
+            left: 75,
+            top: 410,
+            child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              radius: 25,
+              child: ClipOval(
+                child: Image(
+                  image: AssetImage("assets/welcome_screen/welcome_pharma.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+          const Positioned(
+            left: 290,
+            top: 415,
+            child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              radius: 25,
+              child: ClipOval(
+                child: Image(
+                  image: AssetImage("assets/welcome_screen/welcome_planner.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+
+         /* const Positioned(
             left: 105,
             top: 160,
             child: Image(
               image: AssetImage("assets/welcome_screen/Illustration.png"),
               fit: BoxFit.cover,
             ),
-          ),
+          ),*/
           Positioned(
             left: 00,
             right: 00,
