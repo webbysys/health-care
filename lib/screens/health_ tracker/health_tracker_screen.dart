@@ -18,6 +18,15 @@ class _HealthTrackerScreenState extends State<HealthTrackerScreen> {
   final dietMap = <String, double>{
     "Progress": 80.00,
   };
+  final bpTracker = <String, double>{
+    "Progress": 00.00,
+  };
+  final glucoseTracker = <String, double>{
+    "Progress": 00.00,
+  };
+  final bodyTemperature = <String, double>{
+    "Progress": 00.00,
+  };
 
   final colorList = <Color>[
     Colors.white,
@@ -474,6 +483,364 @@ class _HealthTrackerScreenState extends State<HealthTrackerScreen> {
                       ),
                       const SizedBox(height: 8,),
                       const SizedBox(height: 332,),
+                      const SizedBox(height: 8,),
+                      const Text("BP TRACKER",style: TextStyle(
+                          fontSize: 18,
+                          color: Color(0xff082244),
+                          fontWeight: FontWeight.bold
+                      ),),
+                      const SizedBox(height: 8,),
+                      Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: const Color(0xff082244),
+                                borderRadius: BorderRadius.circular(10)
+                            ),
+                            height: 100,
+                            width: 80,
+                            child: Center(
+                                child:Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+
+                                        children: [
+                                          PieChart(
+                                            dataMap: bpTracker,
+                                            chartType: ChartType.ring,
+                                            chartRadius: 45,
+                                            ringStrokeWidth: 5,
+                                            initialAngleInDegree: 80,
+                                            centerText: "00%",
+                                            centerTextStyle: const TextStyle(
+                                                backgroundColor:Color(0xff082244),
+                                                fontSize: 12
+                                            ),
+                                            baseChartColor:const Color(0xff6D90C6) ,
+                                            colorList: colorList,
+                                            chartValuesOptions: const ChartValuesOptions(
+                                              showChartValuesInPercentage: true,
+                                              showChartValues: false,
+
+                                            ),
+                                            legendOptions: const LegendOptions(
+                                                showLegends: false
+                                            ),
+                                            totalValue: 100,
+                                          ),
+                                          const SizedBox(height: 2,),
+                                          const Text("7 DAYS",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w700
+                                            ),)
+                                        ],
+                                      ),
+
+
+                                    ],
+                                  ),
+                                )
+                            ),
+
+                          ),
+                          const SizedBox(width: 16,),
+                          GestureDetector(
+                            onTap: (){},
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              height:100,
+                              width: 80,
+                              child:const Center(
+                                child:  Image(image: AssetImage(
+                                    "assets/health_tracker/plus-circle.png"
+                                ),
+                                  height: 52,
+                                  width: 52,),
+                              ) ,
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 8,),
+                      const SizedBox(height: 332,),
+                      const Text("GLUCOSE TRACKER",style: TextStyle(
+                          fontSize: 18,
+                          color: Color(0xff082244),
+                          fontWeight: FontWeight.bold
+                      ),),
+                      const SizedBox(height: 8,),
+                      Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: const Color(0xff082244),
+                                borderRadius: BorderRadius.circular(10)
+                            ),
+                            height: 100,
+                            width: 80,
+                            child: Center(
+                                child:Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+
+                                        children: [
+                                          PieChart(
+                                            dataMap: glucoseTracker,
+                                            chartType: ChartType.ring,
+                                            chartRadius: 45,
+                                            ringStrokeWidth: 5,
+                                            initialAngleInDegree: 80,
+                                            centerText: "00%",
+                                            centerTextStyle: const TextStyle(
+                                                backgroundColor:Color(0xff082244),
+                                                fontSize: 12
+                                            ),
+                                            baseChartColor:const Color(0xff6D90C6) ,
+                                            colorList: colorList,
+                                            chartValuesOptions: const ChartValuesOptions(
+                                              showChartValuesInPercentage: true,
+                                              showChartValues: false,
+
+                                            ),
+                                            legendOptions: const LegendOptions(
+                                                showLegends: false
+                                            ),
+                                            totalValue: 100,
+                                          ),
+                                          const SizedBox(height: 2,),
+                                          const Text("7 DAYS",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w700
+                                            ),)
+                                        ],
+                                      ),
+
+
+                                    ],
+                                  ),
+                                )
+                            ),
+
+                          ),
+                          const SizedBox(width: 16,),
+                          GestureDetector(
+                            onTap: (){},
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              height:100,
+                              width: 80,
+                              child:const Center(
+                                child:  Image(image: AssetImage(
+                                    "assets/health_tracker/plus-circle.png"
+                                ),
+                                  height: 52,
+                                  width: 52,),
+                              ) ,
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 8,),
+                      const SizedBox(height: 332,),
+                      const Text("BODY TEMPERATURE",style: TextStyle(
+                          fontSize: 18,
+                          color: Color(0xff082244),
+                          fontWeight: FontWeight.bold
+                      ),),
+                      const SizedBox(height: 8,),
+                      Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: const Color(0xff082244),
+                                borderRadius: BorderRadius.circular(10)
+                            ),
+                            height: 100,
+                            width: 80,
+                            child: Center(
+                                child:Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+
+                                        children: [
+                                          PieChart(
+                                            dataMap: bodyTemperature,
+                                            chartType: ChartType.ring,
+                                            chartRadius: 45,
+                                            ringStrokeWidth: 5,
+                                            initialAngleInDegree: 80,
+                                            centerText: "00%",
+                                            centerTextStyle: const TextStyle(
+                                                backgroundColor:Color(0xff082244),
+                                                fontSize: 12
+                                            ),
+                                            baseChartColor:const Color(0xff6D90C6) ,
+                                            colorList: colorList,
+                                            chartValuesOptions: const ChartValuesOptions(
+                                              showChartValuesInPercentage: true,
+                                              showChartValues: false,
+
+                                            ),
+                                            legendOptions: const LegendOptions(
+                                                showLegends: false
+                                            ),
+                                            totalValue: 100,
+                                          ),
+                                          const SizedBox(height: 2,),
+                                          const Text("7 DAYS",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w700
+                                            ),)
+                                        ],
+                                      ),
+
+
+                                    ],
+                                  ),
+                                )
+                            ),
+
+                          ),
+                          const SizedBox(width: 16,),
+                          GestureDetector(
+                            onTap: (){},
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              height:100,
+                              width: 80,
+                              child:const Center(
+                                child:  Image(image: AssetImage(
+                                    "assets/health_tracker/plus-circle.png"
+                                ),
+                                  height: 52,
+                                  width: 52,),
+                              ) ,
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 8,),
+                      const SizedBox(height: 332,),
+                      const Text("WEIGHT TRACKER",style: TextStyle(
+                          fontSize: 18,
+                          color: Color(0xff082244),
+                          fontWeight: FontWeight.bold
+                      ),),
+                      const SizedBox(height: 8,),
+                      Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: const Color(0xff082244),
+                                borderRadius: BorderRadius.circular(10)
+                            ),
+                            height: 100,
+                            width: 80,
+                            child: Center(
+                                child:Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+
+                                        children: [
+                                          PieChart(
+                                            dataMap: bodyTemperature,
+                                            chartType: ChartType.ring,
+                                            chartRadius: 45,
+                                            ringStrokeWidth: 5,
+                                            initialAngleInDegree: 80,
+                                            centerText: "00%",
+                                            centerTextStyle: const TextStyle(
+                                                backgroundColor:Color(0xff082244),
+                                                fontSize: 12
+                                            ),
+                                            baseChartColor:const Color(0xff6D90C6) ,
+                                            colorList: colorList,
+                                            chartValuesOptions: const ChartValuesOptions(
+                                              showChartValuesInPercentage: true,
+                                              showChartValues: false,
+
+                                            ),
+                                            legendOptions: const LegendOptions(
+                                                showLegends: false
+                                            ),
+                                            totalValue: 100,
+                                          ),
+                                          const SizedBox(height: 2,),
+                                          const Text("7 DAYS",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w700
+                                            ),)
+                                        ],
+                                      ),
+
+
+                                    ],
+                                  ),
+                                )
+                            ),
+
+                          ),
+                          const SizedBox(width: 16,),
+                          GestureDetector(
+                            onTap: (){},
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              height:100,
+                              width: 80,
+                              child:const Center(
+                                child:  Image(image: AssetImage(
+                                    "assets/health_tracker/plus-circle.png"
+                                ),
+                                  height: 52,
+                                  width: 52,),
+                              ) ,
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 8,),
+                      const SizedBox(height: 332,),
+
 
                     ],
                   ),
