@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../utilis/const_color.dart';
-import '../../../../utilis/mixins.dart';
-import '../doctor_appoinment_screen.dart';
 import '../local_doctor/local_cardiology.dart';
 class ForeignDoctor extends StatefulWidget {
   const ForeignDoctor({Key? key}) : super(key: key);
@@ -21,79 +19,83 @@ class _ForeignDoctorState extends State<ForeignDoctor> with TickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8,top: 8),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TabBar(
-                      isScrollable: true,
-                      labelColor: Colors.white,
-                      unselectedLabelColor: ConstantsColor.primaryColor,
-                      labelPadding: const EdgeInsets.only(left: 6,right: 6),
-                      indicator: BoxDecoration(
-                        border: Border.all(color: ConstantsColor.primaryColor,),
-                        borderRadius: BorderRadius.circular(4),
-                        color: ConstantsColor.primaryColor,),
-                      tabs: const [
-                        Tab(
-                          child: Text(
-                            "Cardiology",
-                            style: TextStyle(),
+      body: Container(
+        color: ConstantsColor.backgroundColor,
+        child: Column(
+          children: [
+            Padding(
+                padding: const EdgeInsets.only(left: 8, right: 8,top: 8),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TabBar(
+                        isScrollable: true,
+                        labelColor: Colors.white,
+                        unselectedLabelColor: ConstantsColor.primaryColor,
+                        labelPadding: const EdgeInsets.only(left: 8,right: 8),
+                        indicatorPadding:const EdgeInsets.only(top:6,bottom: 6) ,
+                        indicator: BoxDecoration(
+                          border: Border.all(color: ConstantsColor.primaryColor,),
+                          borderRadius: BorderRadius.circular(4),
+                          color: ConstantsColor.primaryColor,),
+                        tabs: const [
+                          Tab(
+                            child: Text(
+                              "Cardiology",
+                              style: TextStyle(),
+                            ),
                           ),
-                        ),
-                        Tab(
-                            child: Text(
-                              "Orthopedics",
-                              style: TextStyle(),
-                            )),
-                        Tab(
-                            child: Text(
-                              "Neurosurgery",
-                              style: TextStyle(),
-                            )),
-                        Tab(
-                            child: Text(
-                              "Internal medicine",
-                              style: TextStyle(),
-                            )),
-                        Tab(
-                            child: Text(
-                              "Family medicine",
-                              style: TextStyle(),
-                            )),
-                        Tab(
-                            child: Text(
-                              "General surgery",
-                              style: TextStyle(),
-                            )),
-                        Tab(
-                            child: Text(
-                              "Gastroenterology",
-                              style: TextStyle(),
-                            ))
-                      ],
-                      controller: _tabController,
+                          Tab(
+                              child: Text(
+                                "Orthopedics",
+                                style: TextStyle(),
+                              )),
+                          Tab(
+                              child: Text(
+                                "Neurosurgery",
+                                style: TextStyle(),
+                              )),
+                          Tab(
+                              child: Text(
+                                "Internal medicine",
+                                style: TextStyle(),
+                              )),
+                          Tab(
+                              child: Text(
+                                "Family medicine",
+                                style: TextStyle(),
+                              )),
+                          Tab(
+                              child: Text(
+                                "General surgery",
+                                style: TextStyle(),
+                              )),
+                          Tab(
+                              child: Text(
+                                "Gastroenterology",
+                                style: TextStyle(),
+                              ))
+                        ],
+                        controller: _tabController,
+                      ),
                     ),
-                  ),
-                ],
-              )),
-          Flexible(
-              child: TabBarView(
-                controller: _tabController,
-                children: const [
-                  LocalCardiology(),
-                  Center(child: Text("Not Available Yet")),
-                  Center(child: Text("Not Available Yet")),
-                  Center(child: Text("Not Available Yet")),
-                  Center(child: Text("Not Available Yet")),
-                  Center(child: Text("Not Available Yet")),
-                  Center(child: Text("Not Available Yet")),
-                ],
-              ))
-        ],
+                  ],
+                )),
+            Flexible(
+                child: TabBarView(
+                  controller: _tabController,
+                  children: const [
+                    LocalCardiology(),
+                    Center(child: Text("Not Available Yet")),
+                    Center(child: Text("Not Available Yet")),
+                    Center(child: Text("Not Available Yet")),
+                    Center(child: Text("Not Available Yet")),
+                    Center(child: Text("Not Available Yet")),
+                    Center(child: Text("Not Available Yet")),
+                  ],
+                ))
+          ],
+        ),
       ),);
   }
 }
