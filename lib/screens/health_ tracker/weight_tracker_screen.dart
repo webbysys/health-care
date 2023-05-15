@@ -3,19 +3,17 @@ import 'package:flutter/material.dart';
 import '../../utilis/const_color.dart';
 import '../../widgets/appbar.dart';
 import 'health_tracker_screen.dart';
-
-class BodyTemparatureScreen extends StatefulWidget {
-  const BodyTemparatureScreen({Key? key}) : super(key: key);
+class WeightTrackerScreen extends StatefulWidget {
+  const WeightTrackerScreen({Key? key}) : super(key: key);
 
   @override
-  State<BodyTemparatureScreen> createState() => _BodyTemparatureScreenState();
+  State<WeightTrackerScreen> createState() => _WeightTrackerScreenState();
 }
 
-class _BodyTemparatureScreenState extends State<BodyTemparatureScreen> {
-  String date = '', bodyTemperature = '';
+class _WeightTrackerScreenState extends State<WeightTrackerScreen> {
+  String date = '', weight = '';
   final TextEditingController _dateController = TextEditingController();
-  final TextEditingController _bodyTemperatureController = TextEditingController();
-
+  final TextEditingController _weightController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -60,7 +58,7 @@ class _BodyTemparatureScreenState extends State<BodyTemparatureScreen> {
                               height: 8,
                             ),
                             TextFormField(
-                              controller: _bodyTemperatureController,
+                              controller: _weightController,
                               keyboardType: TextInputType.text,
                               textAlign: TextAlign.center,
                               decoration: const InputDecoration(
@@ -107,7 +105,7 @@ class _BodyTemparatureScreenState extends State<BodyTemparatureScreen> {
                       height: 16,
                     ),
                     const Text(
-                      'Age and average body temperature',
+                      'Normal Weight Ranges: Body Mass Index (BMI)',
                       style: TextStyle(
                           color: ConstantsColor.primaryColor,
                           fontSize: 20,
@@ -116,19 +114,97 @@ class _BodyTemparatureScreenState extends State<BodyTemparatureScreen> {
                     const SizedBox(
                       height: 8,
                     ),
-                    const Text(
-                      'Your “normal” body temperature changes throughout your life. It often rises from childhood into adulthood before dipping during the later years of life. By stages, it looks like this:',
-                      style: TextStyle(
-                          color: ConstantsColor.greyColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal),
-                      textAlign: TextAlign.start,
-                    ),
+                    Row(
+                      children: const [
+                        Text(
+                          'Underweight: ',
+                          style: TextStyle(
+                              color: ConstantsColor.primaryColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                         width: 2,
+                        ),
+                        Text(
+                          'BMI is less than 18.5 ',
+                          style: TextStyle(
+                              color: ConstantsColor.greyColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
+                    ],),
                     const SizedBox(
                       height: 8,
                     ),
+                    Row(
+                      children: const [
+                        Text(
+                          'Normal weight: ',
+                          style: TextStyle(
+                              color: ConstantsColor.primaryColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          width: 2,
+                        ),
+                        Text(
+                          'BMI is 18.5 to 24.9 ',
+                          style: TextStyle(
+                              color: ConstantsColor.greyColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      children: const [
+                        Text(
+                          'Overweight:  ',
+                          style: TextStyle(
+                              color: ConstantsColor.primaryColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          width: 2,
+                        ),
+                        Text(
+                          'BMI is 25 to 29.9 ',
+                          style: TextStyle(
+                              color: ConstantsColor.greyColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      children: const [
+                        Text(
+                          'Obese: ',
+                          style: TextStyle(
+                              color: ConstantsColor.primaryColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          width: 2,
+                        ),
+                        Text(
+                          'BMI is 30 or more',
+                          style: TextStyle(
+                              color: ConstantsColor.greyColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],),
                     const Text(
-                      'For younger children',
+                      'Calculating my BMI',
                       style: TextStyle(
                           color: ConstantsColor.primaryColor,
                           fontSize: 18,
@@ -138,54 +214,11 @@ class _BodyTemparatureScreenState extends State<BodyTemparatureScreen> {
                       height: 8,
                     ),
                     const Text(
-                      'The typical body temperature range for children between birth and 10 years old goes from 95.9 F (35.5 C) to 99.5 F (37.5 C). This would be a temperature measured through an oral reading.',
+                      'BMI = (your weight in pounds x 703) ÷ (your height in inches x your height in inches)For example,\nif you weigh 120 pounds and are 5 ft. 3 in. (63 in.) tall:\nBMI = (120 x 703) ÷ (63 x 63) or 84,360 ÷ 3969 = 21.3',
                       style: TextStyle(
                           color: ConstantsColor.greyColor,
                           fontSize: 16,
-                          fontWeight: FontWeight.normal),
-                      textAlign: TextAlign.start,
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    const Text(
-                      'For adults and older children',
-                      style: TextStyle(
-                          color: ConstantsColor.primaryColor,
-                          fontSize: 18,
                           fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    const Text(
-                      'The typical body temperature range for people ages 11 to 65 is 97.6 F (36.4 C) to 99.6 F (37.6 C).',
-                      style: TextStyle(
-                          color: ConstantsColor.greyColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal),
-                      textAlign: TextAlign.start,
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    const Text(
-                      'For older adults',
-                      style: TextStyle(
-                          color: ConstantsColor.primaryColor,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    const Text(
-                      'The typical body temperature range for people older than 65 is 96.4 F (35.8 C) to 98.5 F (36.9 C).',
-                      style: TextStyle(
-                          color: ConstantsColor.greyColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal),
-                      textAlign: TextAlign.start,
                     ),
                     const SizedBox(
                       height: 32,

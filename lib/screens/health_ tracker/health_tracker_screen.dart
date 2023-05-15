@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:healthcare/screens/health_%20tracker/body_temparature_screen.dart';
 import 'package:healthcare/screens/health_%20tracker/bp_tracker.dart';
 import 'package:healthcare/screens/health_%20tracker/glucose_tracker_screen.dart';
+import 'package:healthcare/screens/health_%20tracker/weight_tracker_screen.dart';
 import 'package:healthcare/utilis/const_color.dart';
 import 'package:healthcare/widgets/appbar.dart';
 import 'package:pie_chart/pie_chart.dart';
@@ -555,7 +557,7 @@ class _HealthTrackerScreenState extends State<HealthTrackerScreen> {
                           const SizedBox(width: 16,),
                           GestureDetector(
                             onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>BpTrackerScreen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const BpTrackerScreen()));
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -646,7 +648,7 @@ class _HealthTrackerScreenState extends State<HealthTrackerScreen> {
                           const SizedBox(width: 16,),
                           GestureDetector(
                             onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>GlucoseTrackerScreen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const GlucoseTrackerScreen()));
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -736,7 +738,9 @@ class _HealthTrackerScreenState extends State<HealthTrackerScreen> {
                           ),
                           const SizedBox(width: 16,),
                           GestureDetector(
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const BodyTemparatureScreen()));
+                            },
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -825,7 +829,9 @@ class _HealthTrackerScreenState extends State<HealthTrackerScreen> {
                           ),
                           const SizedBox(width: 16,),
                           GestureDetector(
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const WeightTrackerScreen()));
+                            },
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
