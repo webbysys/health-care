@@ -240,4 +240,5 @@ class Mixins{
   final List<String> patientGender = ['Male','Female','Others'];
   final List<String> doctorAppoinmentSlots = ['8 am - 9am','9 am - 10 am','10 am - 11 am','11 am - 12 pm'];
   final List<String> virtualLabServiceType = ['CT scan','Blood Group','CVC'];
+  final List<String> glucoseTestTimeperiod = ['Fasting','Random','2 Hours After BreakFast'];
 }
